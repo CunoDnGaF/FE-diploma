@@ -1,0 +1,291 @@
+.multi-range-slider * {
+	box-sizing: border-box;
+	padding: 0px;
+	margin: 0px;
+}
+
+.range-slider-price {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.range-slider-time {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.range-slider-time .top-labels {
+  display: none;
+}
+
+.top-labels {
+  top: -10px;
+  position: absolute;
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+}
+
+.bottom-labels {
+  top: 42px;
+  position: absolute;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(229, 229, 229, 1);
+}
+
+.labels-left {
+  left: -5px;
+}
+
+.labels-right {
+  right: -5px;
+}
+
+.labels-unactive {
+  display: none;
+}
+
+.multi-range-slider {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+  border: none;
+  box-shadow: none;
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Old versions of Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge,*/
+}
+
+.range-slider-time .multi-range-slider .bar{
+  height: 10px;
+}
+
+.multi-range-slider .bar {
+	display: flex;
+  width: 275px;
+  height: 19px;
+  box-shadow: none !important;
+}
+.multi-range-slider .bar-left {
+	width: 25%;
+	padding: 4px 0px;
+  box-shadow: none !important;
+  border-radius: 8px !important;
+  border: 1px solid rgba(196, 196, 196, 1);
+}
+.multi-range-slider .bar-right {
+	width: 25%;
+  box-shadow: none !important;
+  border-radius: 8px !important;
+  border: 1px solid rgba(196, 196, 196, 1);
+}
+.multi-range-slider .bar-inner {
+	display: flex;
+	flex-grow: 1;
+	flex-shrink: 1;
+	justify-content: space-between;
+	position: relative;
+	justify-content: space-between;
+  box-shadow: none !important;
+  border: none;
+}
+.multi-range-slider .bar-inner-left {
+	width: 50%;
+}
+.multi-range-slider .bar-inner-right {
+	width: 50%;
+}
+.multi-range-slider .thumb {
+	position: relative;
+	z-index: 1;
+	cursor: pointer;
+}
+
+.range-slider-time .multi-range-slider .thumb::before{
+  width: 18px;
+	height: 18px;
+}
+
+.multi-range-slider .thumb::before {
+	content: '';
+	background-color: rgba(255, 255, 255, 1);
+  box-shadow: none;
+  border: none;
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	z-index: 1;
+	margin-top: -3px;
+	cursor: pointer;
+}
+.multi-range-slider .input-type-range:focus + .thumb::after {
+	content: '';
+	position: absolute;
+	top: -4px;
+	left: -7px;
+	width: 11px;
+	height: 11px;
+	z-index: 2;
+	border-radius: 50%;
+	border: dotted 1px black;
+	box-shadow: 0px 0px 5px white, inset 0px 0px 10px black;
+}
+
+.range-slider-time .multi-range-slider .caption {
+  bottom: -25px;
+}
+
+.range-slider-time .multi-range-slider .caption ::after {
+  content: ':00';
+}
+
+.multi-range-slider .caption {
+	position: absolute;
+	bottom: -17px;
+	width: 2px;
+	height: 2px;
+	left: -2px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: visible;
+  background-color: transparent !important;
+}
+
+.multi-range-slider .thumb .caption * {
+  display: flex;
+  background-color: transparent !important;
+	position: absolute;
+	border: none !important;
+  box-shadow: none;
+  font-size: 16px;
+  font-weight: 400;
+	color: rgba(229, 229, 229, 1);
+	white-space: nowrap;
+}
+.multi-range-slider .thumb:active .caption {
+	display: flex;
+}
+.multi-range-slider .input-type-range:focus + .thumb .caption {
+	display: flex;
+}
+.multi-range-slider .input-type-range {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.multi-range-slider .ruler {
+	margin: 10px 0px -5px 0px;
+	display: flex;
+	/* display: none; */
+	overflow: hidden;
+}
+.multi-range-slider .ruler .ruler-rule {
+	border-left: solid 1px;
+	border-bottom: solid 1px;
+	display: flex;
+	flex-grow: 1;
+	flex-shrink: 1;
+	padding: 5px 0px;
+}
+.multi-range-slider .ruler .ruler-rule:last-child {
+	border-right: solid 1px;
+}
+
+.multi-range-slider .ruler .ruler-sub-rule {
+	border-left: solid 1px;
+	/* border-bottom: solid 1px; */
+	display: flex;
+	flex-grow: 1;
+	flex-shrink: 1;
+	padding: 3px 0px;
+	bottom: 0px;
+	margin-bottom: -5px;
+}
+.multi-range-slider .ruler .ruler-sub-rule:first-child {
+	border-left: none;
+}
+
+.multi-range-slider .labels {
+	display: flex;
+	justify-content: space-between;
+	padding: 0px;
+	margin-top: 4px;
+	/* display: none; */
+}
+.multi-range-slider .label {
+	font-size: 16px;
+  font-weight: 400;
+	color: rgba(229, 229, 229, 1);
+	display: flex;
+	width: 1px;
+	justify-content: center;
+}
+.multi-range-slider .label:first-child {
+	justify-content: start;
+}
+.multi-range-slider .label:last-child {
+	justify-content: end;
+}
+.multi-range-slider.zero-ranage-margin .thumb-left {
+	right: 12px;
+}
+.multi-range-slider.zero-ranage-margin .thumb-right {
+	left: 8px;
+}
+
+
+/* Disabled */
+.multi-range-slider.disabled {
+	border: solid 1px rgb(200, 200, 200);
+	box-shadow: 1px 1px 4px rgb(180, 180, 180);
+	color:rgb(180, 180, 180);
+}
+.multi-range-slider .bar {
+	display: flex;
+}
+.multi-range-slider.disabled .bar-left {
+	background-color: #c9c9c9;
+	box-shadow: inset 0px 0px 5px rgb(160, 160, 160);
+}
+.multi-range-slider.disabled .bar-right {
+	background-color: #c9c9c9;
+	box-shadow: inset 0px 0px 5px rgb(160, 160, 160);
+}
+.multi-range-slider.disabled .bar-inner {
+	background-color: rgb(130 243 130);
+	border: solid 1px rgb(149, 149, 149);
+	box-shadow: inset 0px 0px 5px rgb(103, 103, 103);
+}
+.multi-range-slider.disabled .thumb {
+	background-color: white;
+}
+.multi-range-slider.disabled .thumb::before {
+	border: solid 1px rgb(200, 200, 200);
+	box-shadow: 0px 0px 3px rgb(35, 35, 35), inset 0px 0px 5px gray;
+}
+.multi-range-slider.disabled .input-type-range:focus + .thumb::after {
+	border: dotted 1px rgb(35, 35, 35);
+	box-shadow: 0px 0px 5px white, inset 0px 0px 10px rgb(35, 35, 35);
+}
+.multi-range-slider.disabled .thumb .caption * {
+	background-color: rgb(84, 84, 137);
+	color: rgb(199, 199, 199);
+	box-shadow: 0px 0px 5px rgb(35, 35, 35);
+}
+
